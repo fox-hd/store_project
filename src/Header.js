@@ -3,8 +3,11 @@ import {Link } from 'react-router-dom';
 import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {BsPeopleCircle} from 'react-icons/bs'
+import ModalSignIn from './components/sign_in'
 
 function Header(){
+  const [modalSignInShow, setModalSignInShow] = React.useState(false);
+  
   return(
     <div>
       <Navbar bg="dark" variant="dark" expand="lg">
@@ -18,11 +21,19 @@ function Header(){
             <FormControl type="text" placeholder="Busca" className="mr-sm-2" />
             <Button variant="dark" placeholder="Busca">Busca</Button>
           </Form>
-          <Nav.Link as={Link} to="/cart"><BsPeopleCircle/> Login </Nav.Link>
+          <Button variant="primary" onClick={() => setModalSignInShow(true)}>
+          <BsPeopleCircle/> Login
+          </Button>
         </Navbar.Collapse>
-      </Navbar>
-      
+      </Navbar> 
+
+      <ModalSignIn
+        show={modalSignInShow}
+        hide={() => setModalSignInShow(false)}
+      />
     </div>
+
+    
   )
 }
 
