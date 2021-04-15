@@ -19,8 +19,8 @@ function Home(){
         <br/>
         <Container>
           <Row>
-            <Col>
-              <Card border="dark" style={{ width: '19rem', backgroundColor: "#FFFAFA" }}>
+            <Col xs={12} sm={12} md={4}>
+              <Card border="dark" style={{ backgroundColor: "#FFFAFA" }}>
                 <Card.Img variant="top" width={200} height= {270} src={celular1} />
                 <Card.Body>
                   <Card.Title>R$ 4.599,00</Card.Title>
@@ -31,7 +31,7 @@ function Home(){
                 </Card.Body>
               </Card>
             </Col>
-            <Col>
+            <Col xs={12} sm={12} md={4}>
               <Card border="dark" style={{ backgroundColor: "#FFFAFA" }}>
                 <Card.Img variant="top" width={200} height= {270} src={celular2} />
                 <Card.Body>
@@ -43,7 +43,7 @@ function Home(){
                 </Card.Body>
               </Card>
             </Col>
-            <Col>
+            <Col xs={12} sm={12} md={4}>
               <Card border="dark" style={{ backgroundColor: "#FFFAFA" }}>
                 <Card.Img variant="top" width={200} height= {270} src={celular3} />
                 <Card.Body>
@@ -58,7 +58,7 @@ function Home(){
           </Row>
           <br/>
           <Row>
-            <Col>
+            <Col xs={12} sm={12} md={4}>
               <Card border="dark" style={{ backgroundColor: "#FFFAFA" }}>
                 <Card.Img variant="top" width={200} height={250} src={drone} />
                 <Card.Body>
@@ -70,7 +70,7 @@ function Home(){
                 </Card.Body>
               </Card>
             </Col>
-            <Col>
+            <Col xs={12} sm={12} md={4}>
               <Card border="dark" style={{ backgroundColor: "#FFFAFA" }}>
                 <Card.Img variant="top" width={200} height={250} src={teclado} />
                 <Card.Body>
@@ -82,7 +82,7 @@ function Home(){
                 </Card.Body>
               </Card>
             </Col>
-            <Col>
+            <Col xs={12} sm={12} md={4}>
               <Card border="dark" style={{ backgroundColor: "#FFFAFA" }}>
                 <Card.Img variant="top" width={200} height={250} src={headphone} />
                 <Card.Body>
@@ -97,7 +97,7 @@ function Home(){
             </Row>
             <br/>
             <Row>
-            <Col>
+            <Col xs={12} sm={12} md={4}>
               <Card border="dark" style={{ width: '19rem', backgroundColor: "#FFFAFA" }}>
                 <Card.Img variant="top" width={200} height= {270} src={notebook1} />
                 <Card.Body>
@@ -109,7 +109,7 @@ function Home(){
                 </Card.Body>
               </Card>
             </Col>
-            <Col>
+            <Col xs={12} sm={12} md={4}>
               <Card border="dark" style={{ backgroundColor: "#FFFAFA" }}>
                 <Card.Img variant="top" width={200} height= {270} src={notebook2} />
                 <Card.Body>
@@ -121,7 +121,7 @@ function Home(){
                 </Card.Body>
               </Card>
             </Col>
-            <Col>
+            <Col xs={12} sm={12} md={4}>
               <Card border="dark" style={{ backgroundColor: "#FFFAFA" }}>
                 <Card.Img variant="top" width={200} height= {270} src={notebook3} />
                 <Card.Body>
