@@ -10,7 +10,7 @@ function FormSignUp(){
   const [confirmpassword, setConfirmPassword] = useState('')
   const [cpf, setCpf] = useState('')
   const [tel, setTel] = useState('')
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState('Todos os campos são obrigatórios')
   const success = "Formulario enviado com sucesso"
 
 
