@@ -29,7 +29,7 @@ function Header(){
 
       <ModalSignIn
         show={modalSignInShow}
-        hide={() => setModalSignInShow(false)}
+        onHide={() => setModalSignInShow(false)}
       />
     </div>
 
