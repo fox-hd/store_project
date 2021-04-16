@@ -11,6 +11,7 @@ function FormSignUp(){
   const [cpf, setCpf] = useState('')
   const [tel, setTel] = useState('')
   const [message, setMessage] = useState('Todos os campos são obrigatórios')
+  const [ischecked, setIsChecked] = useState(false)
   const success = "Formulario enviado com sucesso"
 
 
@@ -18,7 +19,15 @@ function FormSignUp(){
     e.preventDefault()
     setMessage('')
     ValidForm()
-    console.log(success)
+    if(!message){
+      setName('')
+      setEmail('')
+      setPassword('')
+      setConfirmPassword('')
+      setCpf('')
+      setTel('')
+      setIsChecked(false)
+    }
   }
 
   const ValidForm = () =>{
@@ -28,6 +37,7 @@ function FormSignUp(){
     if (confirmpassword !== password) return setMessage("Não confere com senha anterior")
     if (!cpf || cpf.length < 11) return setMessage("CPF é obrigátorio")
     if (!tel || tel.length < 9) return setMessage("Tel é Obrigátorio")
+    if (!ischecked) return setMessage("É necessário no termo de aceite")
   }
 
   const ValidName = (e) =>{
@@ -57,7 +67,8 @@ function FormSignUp(){
   }
 
   const ValidCheckBox = (e) =>{
-    console.log(e.target.Check)
+    setIsChecked(e.target.checked)
+    console.log(ischecked)
   }
   
 
@@ -72,26 +83,26 @@ function FormSignUp(){
         </Form.Group>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" onChange={ValidEmail}/>
+          <Form.Control type="email" placeholder="Enter email" value={email} onChange={ValidEmail}/>
         </Form.Group>
         <Form.Group controlId="formBasicPassword">
           <Form.Label>Senha</Form.Label>
-          <Form.Control type="password" placeholder="Mínimo 6 caracteres" onChange={ValidPassword}/>
+          <Form.Control type="password" placeholder="Mínimo 6 caracteres" value={password} onChange={ValidPassword}/>
         </Form.Group>
         <Form.Group controlId="formBasicConfirmPassword">
           <Form.Label>Confirmar Senha</Form.Label>
-          <Form.Control type="password" placeholder="Repita a senha" onChange={ConfirmPassword}/>
+          <Form.Control type="password" placeholder="Repita a senha" value={confirmpassword} onChange={ConfirmPassword}/>
         </Form.Group>
         <Form.Group controlId="formBasicCpf">
           <Form.Label>CPF</Form.Label>
-          <Form.Control type="number" placeholder="Digite seu CPF" onChange={ValidCpf}/>
+          <Form.Control type="number" placeholder="Digite seu CPF" value={cpf} onChange={ValidCpf}/>
         </Form.Group>
         <Form.Group controlId="formBasicTel">
           <Form.Label>Telefone</Form.Label>
-          <Form.Control type="tel" placeholder="Nº de telefone"  onChange={ValidTel}/>
+          <Form.Control type="tel" placeholder="Nº de telefone" value={tel} onChange={ValidTel}/>
         </Form.Group>
         <Form.Group controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Confirmo os dados preenchidos" onChange={ValidCheckBox}/>
+          <Form.Check type="checkbox" label="Confirmo os dados preenchidos" checked={ischecked} onChange={ValidCheckBox}/>
         </Form.Group>
         <Button variant="success" type="submit" >
           Cadastrar
