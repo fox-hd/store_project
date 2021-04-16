@@ -62,7 +62,7 @@ export const Data ={
     title: 'Notebook Positivo Intel Celeron 4GB 500GB',
     price: 'R$ 1.799,00',
     photo: notebook2,
-    link: '/produtos/notebook-positivo"'
+    link: '/produtos/notebook-positivo'
   },
   {
     title: 'Notebook Samsung Expert GfX X40 Intel Core i5, 8GB RAM ',
