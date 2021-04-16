@@ -7,12 +7,21 @@ export const StyledAccount = styled.div`
     flex-direction: column;
     .registered{
       display: table-cell;
+      h4{
+        text-align: center;
+      }
     }
 
   }
 
 .unregistered{
   display: table-cell;
+  h4{
+    text-align: center;
+  }
+  .btn {
+    margin: 50px 110px;
+  }
 }
 
 

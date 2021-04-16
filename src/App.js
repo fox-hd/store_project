@@ -3,6 +3,7 @@ import { Switch, Route} from 'react-router-dom';
 import './App.css';
 import Header from './Header';
 import Home from './components/Home';
+import SignUp from './components/sign_up/index'
 import Cart from './components/Cart';
 import Celular1 from './components/products/celular-iphone'
 import Celular2 from './components/products/celular-samsung'
@@ -21,6 +22,7 @@ function App() {
       <Switch>
         <Route exact path = "/"><Home /></Route>
         <Route  path = "/cart"><Cart /></Route>
+        <Route  path = "/sign-up"><SignUp/></Route>
         <Route  path = "/produtos/celular-iphone"><Celular1 /></Route>
         <Route  path = "/produtos/celular-samsung"><Celular2 /></Route>
         <Route  path = "/produtos/celular-xiaomi"><Celular3 /></Route>

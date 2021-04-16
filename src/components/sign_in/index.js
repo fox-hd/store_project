@@ -1,16 +1,10 @@
 import React from 'react';
 import { Modal, Button, Row, Col} from 'react-bootstrap'
 import FormAccount from './form'
-import ModalSignUp from '../sign_up'
 import {StyledAccount}  from './style'
+import {Link} from 'react-router-dom'
 
 function ModalSignIn(props) {
-  const [modalSignUpShow, setModalSignUpShow] = React.useState(false);
-
-  const openModal = () =>{
-    setModalSignUpShow(true),
-    props.hide()
-  }
 
   return (
     <>
@@ -24,7 +18,7 @@ function ModalSignIn(props) {
           <Modal.Title id="contained-modal-title-vcenter">
             Para continuar, entre com sua conta
           </Modal.Title>
-        </Modal.Header>
+        </Modal.Header >
         <Modal.Body>
           <StyledAccount>
             <Row >
@@ -37,7 +31,7 @@ function ModalSignIn(props) {
             <Col className="align-content">
               <div className="unregistered">
                 <h4>Ainda nao tem cadastro?</h4>
-                <Button variant="primary" onClick={openModal} >
+                <Button variant="primary" as={Link} to="/sign-up" onClick={props.onHide}>
                   Cadastrar conta
                 </Button>
               </div>
@@ -49,10 +43,6 @@ function ModalSignIn(props) {
           <Button variant="primary" onClick={props.onHide}>Sair</Button>
         </Modal.Footer>
       </Modal>
-      <ModalSignUp
-        show={modalSignUpShow}
-        hidesignup={() => setModalSignUpShow(false)}
-    />
   </>
   );
 }
