@@ -4,7 +4,7 @@ import './App.css';
 import Header from './Header';
 import Home from './components/Home';
 import SignUp from './components/sign_up/index'
-import Cart from './components/Cart';
+import Cart from './components/Cart/index';
 import Celular1 from './components/products/celular-iphone'
 import Celular2 from './components/products/celular-samsung'
 import Celular3 from './components/products/celular-xiaomi'
