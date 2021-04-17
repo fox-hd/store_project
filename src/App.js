@@ -5,33 +5,25 @@ import Header from './Header';
 import Home from './components/Home';
 import SignUp from './components/sign_up/index'
 import Cart from './components/Cart/index';
-import Celular1 from './components/products/celular-iphone'
-import Celular2 from './components/products/celular-samsung'
-import Celular3 from './components/products/celular-xiaomi'
-import Notebook1 from './components/products/notebook-dell'
-import Notebook2 from './components/products/notebook-positivo'
-import Notebook3 from './components/products/notebook-samsung'
-import Drone from './components/products/drone'
-import Headphone from './components/products/headphone'
-import Teclado from './components/products/teclado'
+import Product from './components/products';
 
 function App() {
   return (
     <div>
      <Header />
       <Switch>
-        <Route exact path = "/"><Home /></Route>
-        <Route  path = "/cart"><Cart /></Route>
-        <Route  path = "/sign-up"><SignUp/></Route>
-        <Route  path = "/produtos/celular-iphone"><Celular1 /></Route>
-        <Route  path = "/produtos/celular-samsung"><Celular2 /></Route>
-        <Route  path = "/produtos/celular-xiaomi"><Celular3 /></Route>
-        <Route  path = "/produtos/notebook-dell"><Notebook1 /></Route>
-        <Route  path = "/produtos/notebook-positivo"><Notebook2 /></Route>
-        <Route  path = "/produtos/notebook-samsung"><Notebook3 /></Route>
-        <Route  path = "/produtos/drone"><Drone /></Route>
-        <Route  path = "/produtos/headphone"><Headphone /></Route>
-        <Route  path = "/produtos/teclado"><Teclado /></Route>
+        <Route exact path = "/"  component={Home}/>
+        <Route  path = "/cart" component={Cart}/>
+        <Route  path = "/sign-up" component={SignUp}/>
+        <Route  path = "/produtos/celular-iphone" component={Product}/>
+        <Route  path = "/produtos/celular-samsung" component={Product}/>
+        <Route  path = "/produtos/celular-xiaomi" component={Product}/>
+        <Route  path = "/produtos/notebook-dell" component={Product}/>
+        <Route  path = "/produtos/notebook-positivo" component={Product}/>
+        <Route  path = "/produtos/notebook-samsung" component={Product}/>
+        <Route  path = "/produtos/drone" component={Product}/>
+        <Route  path = "/produtos/headphone" component={Product}/>
+        <Route  path = "/produtos/teclado" component={Product}/>
       </Switch>
     </div>
   );

@@ -1,6 +1,8 @@
 import styled from 'styled-components'
+import background from '../../images/back.jpg'
 
 export const StyledCards = styled.div`
+  background: url(${background});
   .content-card {
     margin: 40px 0;
     .card{
