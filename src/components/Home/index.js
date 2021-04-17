@@ -5,17 +5,14 @@ import {Data} from './data'
 import {StyledCards} from './style'
 
 function Home(){
-  
   return(
       <StyledCards>
         <h1>Página Inicial</h1>
         <Container>
           {Data.products.map((product)=>{
-            {console.log(product[0].title)}
             return(
               <Row key={product[0].title}>
               {product.map((item)=>{
-                console.log(item.price)
                 return(
                   <Col key={item.price} xs={12} sm={12} md={4} className="content-card">
                     <Card>

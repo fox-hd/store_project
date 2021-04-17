@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import background from '../../images/back.jpg'
 
 export const StyledCards = styled.div`
-  .content-card {
+    .content-card {
     margin: 40px 0;
     .card{
       box-shadow: 0px 1px 2px rgba(55, 55, 55, 0.2);
@@ -29,5 +29,4 @@ export const StyledContent = styled.div`
     font-size: 50px;
     margin: 30px 10% 0px;
   }
-
 `

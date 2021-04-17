@@ -8,15 +8,14 @@ import Cart from './components/Cart/index';
 import Product from './components/products';
 import Search from './components/search/index';
 
-
 function App() {
   return (
     <div>
      <Header />
       <Switch>
         <Route exact path = "/"  component={Home}/>
-        <Route  path = "/cart" component={Cart}/>
-        <Route  path = "/sign-up" component={SignUp}/>
+        <Route  path = "/carrinho" component={Cart}/>
+        <Route  path = "/cadastro" component={SignUp}/>
         <Route  path = "/busca" component={Search}/>
         <Route  path = "/produtos/celular-iphone" component={Product}/>
         <Route  path = "/produtos/celular-samsung" component={Product}/>

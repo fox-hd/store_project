@@ -18,11 +18,10 @@ export const StyledProduct = styled.div`
       .price{
         font-size: 28px;
         text-align: left;
-        color: rgb(19, 137, 144);
+        color: #138990;
         font-weight: 700;
         margin-top:10px;  
         margin-bottom: 0;
-
       }
       .payment img{
         width: 28px;
@@ -30,13 +29,11 @@ export const StyledProduct = styled.div`
         margin-right: 10px;
       }
       .buy{
-        margin-right: 40px;
+        margin-right: 20px;
       }
       .info-footer{
-        font-size: 0.875rem;
+        font-size: 15px;
       }
     }
   }
-
-
 `
