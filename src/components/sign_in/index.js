@@ -16,7 +16,7 @@ function ModalSignIn(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Para continuar, entre com sua conta
+            Para continuar, entre com sua conta:
           </Modal.Title>
         </Modal.Header >
         <Modal.Body>
@@ -30,8 +30,8 @@ function ModalSignIn(props) {
             </Col>
             <Col className="align-content">
               <div className="unregistered">
-                <h4>Ainda nao tem cadastro?</h4>
-                <Button variant="primary" as={Link} to="/sign-up" onClick={props.onHide}>
+                <h4>Ainda não tem cadastro?</h4>
+                <Button variant="primary" as={Link} to="/cadastro" onClick={props.onHide}>
                   Cadastrar conta
                 </Button>
               </div>
@@ -48,4 +48,3 @@ function ModalSignIn(props) {
 }
 
 export default ModalSignIn;
-

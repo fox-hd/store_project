@@ -10,7 +10,6 @@ function Footer(){
         </Row>
       </Container>
     </StyledFooter>
-
   )
 }
 

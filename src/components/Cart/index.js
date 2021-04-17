@@ -6,7 +6,7 @@ import {StyledTable} from './style'
 
 function Cart(){
   function ClosedBuy(){
-    alert("Compra finalizada")
+    alert("Compra finalizada!")
   }
   return(
     <StyledTable>
@@ -45,15 +45,15 @@ function Cart(){
           </tr>
         </tbody>
       </Table>
-      <div className="cart-button">
-        <Button variant="secondary" size="lg">
-          Limpar Carrinho
-        </Button>
-        <Button variant="primary" size="lg" onClick={ClosedBuy}>
-          Finalizar Compra
-        </Button>
-      </div>
-      </StyledTable>
+        <div className="cart-button">
+          <Button variant="secondary" size="lg">
+            Limpar Carrinho
+          </Button>
+          <Button variant="primary" size="lg" onClick={ClosedBuy}>
+            Finalizar Compra
+          </Button>
+        </div>
+    </StyledTable>
   )
 }
 

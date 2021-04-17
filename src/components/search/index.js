@@ -7,15 +7,13 @@ import {StyledCards, StyledContent} from './style'
 function Search(){
   return(
     <StyledContent>
-      <h1>Resultado da sua busca</h1>
+      <h1>Resultado da sua busca por Celular:</h1>
       <StyledCards>
         <Container>
           {Data.products.map((product)=>{
-            {console.log(product[0].title)}
             return(
               <Row key={product[0].title}>
               {product.map((item)=>{
-                console.log(item.price)
                 return(
                   <Col key={item.price} xs={12} sm={12} md={4} className="content-card">
                     <Card>

@@ -2,7 +2,6 @@ import React, {useState} from  'react'
 import { Form, Button} from 'react-bootstrap'
 import {StyledForm} from './style'
 
-
 function FormSignUp(){
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -12,8 +11,7 @@ function FormSignUp(){
   const [tel, setTel] = useState('')
   const [message, setMessage] = useState('Todos os campos são obrigatórios')
   const [ischecked, setIsChecked] = useState(false)
-  const success = "Formulario enviado com sucesso"
-
+  const success = "Formulário enviado com sucesso"
 
   function SubmitForm(e){
     e.preventDefault()
@@ -32,12 +30,12 @@ function FormSignUp(){
 
   const ValidForm = () =>{
     if (!name) return setMessage("Nome é obrigátorio")
-    if (!email) return setMessage("Email é obrigátorio")
+    if (!email) return setMessage("E-mail é obrigátorio")
     if (password.length < 6) return setMessage("Senha é obrigátorio")
     if (confirmpassword !== password) return setMessage("Não confere com senha anterior")
     if (!cpf || cpf.length < 11) return setMessage("CPF é obrigátorio")
-    if (!tel || tel.length < 9) return setMessage("Tel é Obrigátorio")
-    if (!ischecked) return setMessage("É necessário no termo de aceite")
+    if (!tel || tel.length < 9) return setMessage("Telefone é obrigátorio")
+    if (!ischecked) return setMessage("É necessário aceitar o termo de aceite")
   }
 
   const ValidName = (e) =>{
@@ -71,10 +69,9 @@ function FormSignUp(){
     console.log(ischecked)
   }
   
-
   return(
     <StyledForm>
-      <h4>Preencha seus dados para realizar o cadastro</h4>
+      <h2>Preencha seus dados para realizar o cadastro</h2>
       <div>{message? <p className="error">{message}</p> : <p className="success">{success}</p>}</div>
       <Form className="layout-form" onSubmit={SubmitForm}> 
         <Form.Group controlId="formBasicName">
@@ -82,12 +79,12 @@ function FormSignUp(){
           <Form.Control type="text" placeholder="Digite seu nome" value={name} onChange={ValidName} />
         </Form.Group>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" value={email} onChange={ValidEmail}/>
+          <Form.Label>E-mail</Form.Label>
+          <Form.Control type="email" placeholder="Digite seu e-mail" value={email} onChange={ValidEmail}/>
         </Form.Group>
         <Form.Group controlId="formBasicPassword">
           <Form.Label>Senha</Form.Label>
-          <Form.Control type="password" placeholder="Mínimo 6 caracteres" value={password} onChange={ValidPassword}/>
+          <Form.Control type="password" placeholder="Mínimo de 6 caracteres" value={password} onChange={ValidPassword}/>
         </Form.Group>
         <Form.Group controlId="formBasicConfirmPassword">
           <Form.Label>Confirmar Senha</Form.Label>
@@ -99,7 +96,7 @@ function FormSignUp(){
         </Form.Group>
         <Form.Group controlId="formBasicTel">
           <Form.Label>Telefone</Form.Label>
-          <Form.Control type="tel" placeholder="Nº de telefone" value={tel} onChange={ValidTel}/>
+          <Form.Control type="tel" placeholder="Número de telefone" value={tel} onChange={ValidTel}/>
         </Form.Group>
         <Form.Group controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Confirmo os dados preenchidos" checked={ischecked} onChange={ValidCheckBox}/>

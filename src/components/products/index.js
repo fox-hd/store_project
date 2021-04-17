@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 function Product(props){
   const {title, price, photo, detail, payment} = props.location.data
-  console.log(props)
   return(
     <StyledProduct>
       <h1 className="title">Detalhes do Produto</h1>

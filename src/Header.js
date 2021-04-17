@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link } from 'react-router-dom';
-import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap'
+import {Navbar, Nav, Form, Button} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {BsPeopleCircle} from 'react-icons/bs'
 import ModalSignIn from './components/sign_in'
@@ -15,25 +15,22 @@ function Header(){
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-          <Nav.Link as={Link} to="/cart">Carrinho</Nav.Link>
+          <Nav.Link as={Link} to="/carrinho">Carrinho</Nav.Link>
           </Nav>
           <Form inline>
-            <FormControl type="text" placeholder="Busca" className="mr-sm-2" />
-            <Button variant="dark" placeholder="Busca" as={Link} to="/busca">Busca</Button>
+            <Form.Control type="text" placeholder="Busca" className="mr-sm-2" />
+            <Button variant="outline-light" className="mr-sm-2" placeholder="Busca" as={Link} to="/busca">Busca</Button>
           </Form>
           <Button variant="primary" onClick={() => setModalSignInShow(true)}>
           <BsPeopleCircle/> Login
           </Button>
         </Navbar.Collapse>
       </Navbar> 
-
       <ModalSignIn
         show={modalSignInShow}
         onHide={() => setModalSignInShow(false)}
       />
     </div>
-
-    
   )
 }
 
