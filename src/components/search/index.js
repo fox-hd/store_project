@@ -2,13 +2,13 @@ import React from 'react';
 import { Card, Col, Container, Row, Button } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import {Data} from './data'
-import {StyledCards} from './style'
+import {StyledCards, StyledContent} from './style'
 
-function Home(){
-  
+function Search(){
   return(
+    <StyledContent>
+      <h1>Resultado da sua busca</h1>
       <StyledCards>
-        <h1>Página Inicial</h1>
         <Container>
           {Data.products.map((product)=>{
             {console.log(product[0].title)}
@@ -40,7 +40,8 @@ function Home(){
           })}
         </Container>
       </StyledCards>
+    </StyledContent>
   )
 }
 
-export default Home;
+export default Search;

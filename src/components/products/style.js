@@ -1,15 +1,14 @@
 import styled from 'styled-components'
 
 export const StyledProduct = styled.div`
-
+  height: 100vh;
   img{
     width: 500px;
     height: 500px;
   }
   .title{
-    text-align: center;
-    font-size: 24px;
-    margin: 40px 0 80px 0;
+    font-size: 50px;
+    margin: 30px 10% 30px;
   }
   .product{
     .description {

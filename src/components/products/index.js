@@ -9,7 +9,7 @@ function Product(props){
   console.log(props)
   return(
     <StyledProduct>
-      <p className="title">Resultado da sua busca</p>
+      <h1 className="title">Detalhes do Produto</h1>
       <Container>
         <Row>
           <Col>

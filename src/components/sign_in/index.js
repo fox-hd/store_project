@@ -25,7 +25,7 @@ function ModalSignIn(props) {
               <Col className="align-content">
                 <div className="registered">
                   <h4>Já tem cadastro?</h4>
-                  <FormAccount/>
+                  <FormAccount hide={props.onHide}/>
               </div>
             </Col>
             <Col className="align-content">

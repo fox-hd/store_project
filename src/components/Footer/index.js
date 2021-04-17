@@ -1,14 +1,16 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
+import {StyledFooter} from './style'
 
 function Footer(){
   return(
+    <StyledFooter>
       <Container>
         <Row>
-          <Col>
-          </Col>
         </Row>
       </Container>
+    </StyledFooter>
+
   )
 }
 

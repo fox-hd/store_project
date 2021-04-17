@@ -5,6 +5,9 @@ import headphone from '../../images/headphone.jpg'
 import {StyledTable} from './style'
 
 function Cart(){
+  function ClosedBuy(){
+    alert("Compra finalizada")
+  }
   return(
     <StyledTable>
       <h1>Carrinho</h1>
@@ -46,7 +49,7 @@ function Cart(){
         <Button variant="secondary" size="lg">
           Limpar Carrinho
         </Button>
-        <Button variant="primary" size="lg">
+        <Button variant="primary" size="lg" onClick={ClosedBuy}>
           Finalizar Compra
         </Button>
       </div>
