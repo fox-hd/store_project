@@ -23,11 +23,7 @@ function Search(){
                           <Card.Text>
                             {item.title}
                           </Card.Text>
-                          <Card.Link >
-                            <Link to={{pathname:item.link, data: item}} >
-                            <Button variant="primary">Detalhes</Button>
-                            </Link>
-                          </Card.Link>
+                            <Button variant="primary" as={Link} to={{pathname:item.link, data: item}} >Detalhes</Button>
                         </Card.Body>
                     </Card>
                   </Col>

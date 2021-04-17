@@ -19,8 +19,8 @@ function Product(props){
           <p className="price">{price}</p>
           <p className="info-footer">{detail}</p>
           <p className="payment"><img src={Payment}/>{payment}</p>
-          <Button variant="success" size="lg" className="buy" as={Link} to="/cart">Comprar</Button>
-          <Button variant="primary" size="lg" as={Link} to="/cart">Adicionar ao carrinho</Button>
+          <Button variant="success" size="lg" className="buy" as={Link} to={{pathname:"/carrinho", data: props.location.data}}>Comprar</Button>
+          <Button variant="primary" size="lg" as={Link} to={{pathname:"/carrinho", data: props.location.data}}>Adicionar ao carrinho</Button>
           </Col>
         </Row>
       </Container>
