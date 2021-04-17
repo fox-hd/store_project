@@ -19,7 +19,7 @@ function Header(){
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Busca" className="mr-sm-2" />
-            <Button variant="dark" placeholder="Busca">Busca</Button>
+            <Button variant="dark" placeholder="Busca" as={Link} to="/busca">Busca</Button>
           </Form>
           <Button variant="primary" onClick={() => setModalSignInShow(true)}>
           <BsPeopleCircle/> Login

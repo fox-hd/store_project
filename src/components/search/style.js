@@ -2,11 +2,6 @@ import styled from 'styled-components'
 import background from '../../images/back.jpg'
 
 export const StyledCards = styled.div`
-  background: url(${background});
-  h1{
-    font-size: 50px;
-    margin: 30px 10% 0;
-  }
   .content-card {
     margin: 40px 0;
     .card{
@@ -23,6 +18,16 @@ export const StyledCards = styled.div`
       box-shadow: 2px 4px 5px rgba(55, 55, 55, 0.2);
       transform: scale(1.05);
     }
+  }
+
+`
+
+export const StyledContent = styled.div`
+  background: url(${background});
+  height: 100vh;
+  h1{
+    font-size: 50px;
+    margin: 30px 10% 0px;
   }
 
 `

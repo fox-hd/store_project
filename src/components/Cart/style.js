@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-
 export const StyledTable = styled.div`
+  height: 100vh;
   .cart-table{
     margin-left: 10%;
     margin-right: 10%;
@@ -9,9 +9,7 @@ export const StyledTable = styled.div`
   }
   h1{
     font-size: 50px;
-    margin: 30px 10% 30px auto;
-    margin-left: 10%;
-    margin-top: 30px;
+    margin: 30px 10% 30px;
   }
   th{
     padding: 15px;
