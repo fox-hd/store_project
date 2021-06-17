@@ -21,7 +21,7 @@ function Home(){
               return(
                 <Col key={product.nome} xs={12} sm={12} md={4} className="content-card">
                   <Card>
-                    <Card.Img variant="top" width={200} height= {270} src={"../../images/teclado.jpg"}/>
+                    <Card.Img variant="top" width={200} height= {270} src={`/images/${product.codigo}.jpg`}/>
                       <Card.Body>
                         <Card.Title>R$ {product.preco}</Card.Title>
                         <Card.Text>

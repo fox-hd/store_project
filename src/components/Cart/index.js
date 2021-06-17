@@ -1,7 +1,6 @@
 import React from 'react';
 import {Table, Figure, Button} from 'react-bootstrap'
-import notebook3 from '../../images/teclado.jpg'
-import headphone from '../../images/headphone.jpg'
+
 import {StyledTable} from './style'
 
 function Cart(){
@@ -24,7 +23,7 @@ function Cart(){
             <td><Figure.Image
                 width={50}
                 height={50}
-                src={notebook3}/><span>Notebook Samsung Expert GfX X40 Intel Core i5, 8GB RAM</span>
+                src={""}/><span>Notebook Samsung Expert GfX X40 Intel Core i5, 8GB RAM</span>
             </td>
             <td>1</td>
             <td>R$ 3.799,00</td>
@@ -33,7 +32,7 @@ function Cart(){
             <td><Figure.Image
                 width={50}
                 height={50}
-                src={headphone}/><span>Headphone Basike Fone de Ouvido Bluetooth </span>
+                src={""}/><span>Headphone Basike Fone de Ouvido Bluetooth </span>
             </td>
             <td>1</td>
             <td>R$ 179,90</td>
