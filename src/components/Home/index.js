@@ -1,36 +1,39 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Card, Col, Container, Row, Button } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
-import {Data} from './data'
+// import {Data} from './data'
 import {StyledCards} from './style'
 
 function Home(){
+  const [data, setdata] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost/pwn/produtos.php').then(res => res.json()).then(res => {setdata(res)});
+  },[])
+  
+  
   return(
       <StyledCards>
         <h1>Página Inicial</h1>
         <Container>
-          {Data.products.map((product)=>{
-            return(
-              <Row key={product[0].title}>
-              {product.map((item)=>{
-                return(
-                  <Col key={item.price} xs={12} sm={12} md={4} className="content-card">
-                    <Card>
-                      <Card.Img variant="top" width={200} height= {270} src={item.photo}/>
-                        <Card.Body>
-                          <Card.Title>{item.price}</Card.Title>
-                          <Card.Text>
-                            {item.title}
-                          </Card.Text>
-                            <Button variant="primary" as={Link} to={{pathname:item.link, data: item}}>Detalhes</Button>
-                        </Card.Body>
-                    </Card>
-                  </Col>
-                )
-              })}
-            </Row>
-            )
-          })}
+          <Row >
+            {data.map((product)=>{
+              return(
+                <Col key={product.nome} xs={12} sm={12} md={4} className="content-card">
+                  <Card>
+                    <Card.Img variant="top" width={200} height= {270} src={"../../images/teclado.jpg"}/>
+                      <Card.Body>
+                        <Card.Title>R$ {product.preco}</Card.Title>
+                        <Card.Text>
+                          {product.nome}
+                        </Card.Text>
+                          <Button variant="primary" as={Link} to={{pathname:"/produtos/notebook-dell", data: product}}>Detalhes</Button>
+                      </Card.Body>
+                  </Card>
+                </Col>
+              )
+            })}
+          </Row>
         </Container>
       </StyledCards>
   )
