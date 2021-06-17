@@ -1,6 +1,6 @@
 import React from 'react';
 import {Table, Figure, Button} from 'react-bootstrap'
-import notebook3 from '../../images/notebook-samsung.jpg'
+import notebook3 from '../../images/teclado.jpg'
 import headphone from '../../images/headphone.jpg'
 import {StyledTable} from './style'
 

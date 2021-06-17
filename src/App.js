@@ -1,12 +1,12 @@
 import React from 'react';
 import { Switch, Route} from 'react-router-dom';
 import Header from './Header';
-import Footer from './components/Footer/index'
+import Footer from './components/Footer/'
 import Home from './components/Home';
-import SignUp from './components/sign_up/index'
-import Cart from './components/Cart/index';
+import SignUp from './components/sign_up/'
+import Cart from './components/Cart/';
 import Product from './components/products';
-import Search from './components/search/index';
+import Search from './components/search/';
 
 function App() {
   return (

@@ -5,20 +5,21 @@ import Payment from '../../images/payment.png'
 import { Link } from 'react-router-dom';
 
 function Product(props){
-  const {title, price, photo, detail, payment} = props.location.data
+  const {nome, preco, codigo, desconto1, desconto2} = props.location.data
   return(
     <StyledProduct>
+      {console.log(codigo)}
       <h1 className="title">Detalhes do Produto</h1>
       <Container>
         <Row>
           <Col>
-          <img src={photo}/>
+          <img src=""/>
           </Col>
           <Col className="product">
-          <p className="description">{title}</p>
-          <p className="price">{price}</p>
-          <p className="info-footer">{detail}</p>
-          <p className="payment"><img src={Payment}/>{payment}</p>
+          <p className="description">{nome}</p>
+          <p className="price">R$ {preco}</p>
+          <p className="info-footer">ou até 10x de R$ {desconto1} sem juros</p>
+          <p className="payment"><img src={Payment}/> R$ {desconto2} - 10% de desconto em 1x no Cartão ou Boleto</p>
           <Button variant="success" size="lg" className="buy" as={Link} to={{pathname:"/carrinho", data: props.location.data}}>Comprar</Button>
           <Button variant="primary" size="lg" as={Link} to={{pathname:"/carrinho", data: props.location.data}}>Adicionar ao carrinho</Button>
           </Col>
