@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Card, Col, Container, Row, Button } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
-// import {Data} from './data'
 import {StyledCards} from './style'
 
 function Home(){
@@ -27,7 +26,7 @@ function Home(){
                         <Card.Text>
                           {product.nome}
                         </Card.Text>
-                          <Button variant="primary" as={Link} to={{pathname:"/produtos/notebook-dell", data: product}}>Detalhes</Button>
+                          <Button variant="primary" as={Link} to={{pathname:`/produtos/${product.codigo}`, data: product}}>Detalhes</Button>
                       </Card.Body>
                   </Card>
                 </Col>

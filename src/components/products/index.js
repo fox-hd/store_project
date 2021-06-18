@@ -8,12 +8,11 @@ function Product(props){
   const {nome, preco, codigo, desconto1, desconto2} = props.location.data
   return(
     <StyledProduct>
-      {console.log(codigo)}
       <h1 className="title">Detalhes do Produto</h1>
       <Container>
         <Row>
           <Col>
-          <img src=""/>
+          <img src={`/images/${codigo}.jpg`}/>
           </Col>
           <Col className="product">
           <p className="description">{nome}</p>
