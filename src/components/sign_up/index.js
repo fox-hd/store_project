@@ -48,12 +48,10 @@ function FormSignUp(){
 
   const ValidPassword = (e) =>{
     setPassword(e.target.value)
-    console.log(password)
   }
 
   const ConfirmPassword = (e) =>{
     setConfirmPassword(e.target.value)
-    console.log(confirmpassword)
   }
 
   const ValidCpf = (e) =>{
@@ -66,7 +64,6 @@ function FormSignUp(){
 
   const ValidCheckBox = (e) =>{
     setIsChecked(e.target.checked)
-    console.log(ischecked)
   }
   
   return(

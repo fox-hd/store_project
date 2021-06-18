@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import {Link } from 'react-router-dom';
 import {Navbar, Nav, Form, Button} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -7,6 +7,11 @@ import ModalSignIn from './components/sign_in'
 
 function Header(){
   const [modalSignInShow, setModalSignInShow] = React.useState(false);
+  const [search, setSearch] = useState('')
+  
+  function FieldSearch(e){
+    setSearch(e.target.value)
+  }
   
   return(
     <div>
@@ -18,8 +23,8 @@ function Header(){
           <Nav.Link as={Link} to="/carrinho">Carrinho</Nav.Link>
           </Nav>
           <Form inline>
-            <Form.Control type="text" placeholder="Busca" className="mr-sm-2" />
-            <Button variant="outline-light" className="mr-sm-2" placeholder="Busca" as={Link} to="/busca">Busca</Button>
+            <Form.Control required type="text" placeholder="Busca" className="mr-sm-2" value={search} onChange={FieldSearch}/>
+            <Button variant="outline-light" className="mr-sm-2" placeholder="Busca" as={Link} to={{pathname:"/busca", data: search}}>Busca</Button>
           </Form>
           <Button variant="primary" onClick={() => setModalSignInShow(true)}>
           <BsPeopleCircle/> Login

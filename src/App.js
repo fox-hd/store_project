@@ -17,15 +17,15 @@ function App() {
         <Route  path = "/carrinho" component={Cart}/>
         <Route  path = "/cadastro" component={SignUp}/>
         <Route  path = "/busca" component={Search}/>
-        <Route  path = "/produtos/celular-iphone" component={Product}/>
-        <Route  path = "/produtos/celular-samsung" component={Product}/>
-        <Route  path = "/produtos/celular-xiaomi" component={Product}/>
-        <Route  path = "/produtos/notebook-dell" component={Product}/>
-        <Route  path = "/produtos/notebook-positivo" component={Product}/>
-        <Route  path = "/produtos/notebook-samsung" component={Product}/>
-        <Route  path = "/produtos/drone" component={Product}/>
-        <Route  path = "/produtos/headphone" component={Product}/>
-        <Route  path = "/produtos/teclado" component={Product}/>
+        <Route  path = "/produtos/7" component={Product}/>
+        <Route  path = "/produtos/8" component={Product}/>
+        <Route  path = "/produtos/9" component={Product}/>
+        <Route  path = "/produtos/1" component={Product}/>
+        <Route  path = "/produtos/2" component={Product}/>
+        <Route  path = "/produtos/3" component={Product}/>
+        <Route  path = "/produtos/4" component={Product}/>
+        <Route  path = "/produtos/6" component={Product}/>
+        <Route  path = "/produtos/5" component={Product}/>
       </Switch>
       <Footer/>
     </div>
