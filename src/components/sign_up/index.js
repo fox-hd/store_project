@@ -3,6 +3,7 @@ import { Form, Button} from 'react-bootstrap'
 import {StyledForm} from './style'
 
 function FormSignUp(){
+  const [data, setData] = useState('')
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -11,7 +12,7 @@ function FormSignUp(){
   const [tel, setTel] = useState('')
   const [message, setMessage] = useState('Todos os campos são obrigatórios')
   const [ischecked, setIsChecked] = useState(false)
-  const success = "Formulário enviado com sucesso"
+  const success = "Dados cadastrados com sucesso"
 
   function SubmitForm(e){
     e.preventDefault()
@@ -36,7 +37,17 @@ function FormSignUp(){
     if (!cpf || cpf.length < 11) return setMessage("CPF é obrigátorio")
     if (!tel || tel.length < 9) return setMessage("Telefone é obrigátorio")
     if (!ischecked) return setMessage("É necessário aceitar o termo de aceite")
+    Cadastrar()
   }
+
+  function Cadastrar(){
+    fetch("http://localhost/pwn/signup.php?", {
+      method: 'POST', 
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({nome: name, email: email, senha: password})
+    })
+    .then(res => res.json()).then(res => {setData(res)});
+add  }
 
   const ValidName = (e) =>{
     setName(e.target.value)
@@ -69,7 +80,8 @@ function FormSignUp(){
   return(
     <StyledForm>
       <h2>Preencha seus dados para realizar o cadastro</h2>
-      <div>{message? <p className="error">{message}</p> : <p className="success">{success}</p>}</div>
+      <div>{message? <p className="error">{message}</p> : ''}</div>
+      <div>{data?  <p className="success">{success}</p>: <p className="error">Erro ao realzar o cadastro, tente mais tarde</p>}</div>
       <Form className="layout-form" onSubmit={SubmitForm}> 
         <Form.Group controlId="formBasicName">
           <Form.Label>Nome</Form.Label>
