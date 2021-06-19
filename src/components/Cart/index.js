@@ -3,10 +3,12 @@ import {Table, Figure, Button} from 'react-bootstrap'
 
 import {StyledTable} from './style'
 
-function Cart(){
+function Cart(props){
   function ClosedBuy(){
     alert("Compra finalizada!")
   }
+  console.log(props.location.data)
+
   return(
     <StyledTable>
       <h1>Carrinho</h1>
@@ -19,14 +21,15 @@ function Cart(){
           </tr>
         </thead>
         <tbody>
+          data.map()
           <tr>
             <td><Figure.Image
                 width={50}
                 height={50}
-                src={""}/><span>Notebook Samsung Expert GfX X40 Intel Core i5, 8GB RAM</span>
+                src={""}/><span>{props.location.data.nome}</span>
             </td>
             <td>1</td>
-            <td>R$ 3.799,00</td>
+            <td>{props.location.data.preco}</td>
           </tr>
           <tr>
             <td><Figure.Image
