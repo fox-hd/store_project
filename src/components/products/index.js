@@ -1,10 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { Container, Row, Col, Button, Alert} from 'react-bootstrap';
 import { StyledProduct } from './style'
 import Payment from '../../images/payment.png'
 import { Link } from 'react-router-dom';
+import {LoginContext} from '../Context/LoginContext'
 
 function Product(props){
+  const {codcli} = useContext(LoginContext);
+
   const {nome, preco, codigo, desconto1, desconto2} = props.location.data
   const [status, setStatus]= useState()
 
@@ -14,20 +17,21 @@ function Product(props){
     fetch("http://localhost/pwn/adicionarCarrinho.php?", {
       method: 'POST', 
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({produto: nome, preco: preco, cod_produto: codigo})
+      body: JSON.stringify({produto: nome, preco: preco, cod_produto: codigo, cod_cli: codcli})
     })
   }
 
   function mensagem(){
-    return (<Alert variant="dark">
-    O produto foi adicionado no Carrinho!
-    </Alert>
+    return (
+      <Alert variant="dark">
+        O produto foi adicionado no Carrinho!
+      </Alert>
     )
   }
 
   return(
     <StyledProduct>
-      <h1 className="title">Detalhes do Produto</h1>
+      <h1 className="title">Detalhes do Produto {codcli}</h1>
       <Container>
         {status? mensagem():''}
         <Row>

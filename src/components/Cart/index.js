@@ -1,20 +1,44 @@
-import React, {useEffect, useState} from 'react';
-import {Table, Figure, Button} from 'react-bootstrap'
+import React, {useEffect, useState, useContext} from 'react';
+import {Table, Figure, Button, Alert} from 'react-bootstrap'
 import {StyledTable} from './style'
+import {LoginContext} from '../Context/LoginContext'
 
 function Cart(){
+  const {codcli} = useContext(LoginContext);
   const [data, setdata] = useState([])
+  const [limpar, setLimpar] = useState()
+  const [pagar, setPagar] = useState()
 
   var total = []
 
   useEffect(() => {
     fetch('http://localhost/pwn/carrinho.php').then(res => res.json()).then(res => {setdata(res)});
-  },[])
+  },[limpar])
 
   function Apagar(){
-    fetch("http://localhost/pwn/deletaCarrinho.php?");
-    window.location.reload();
+    fetch(`http://localhost/pwn/deletaCarrinho.php?cod_cli=${codcli}`);
     alert("O Carrinho foi esvaziado!");
+    setLimpar(1)
+    alert()
+  }
+  function alert(){
+    return (
+      <Alert variant="primary">
+        O Carrinho foi esvaziado
+      </Alert>
+    )
+  }
+
+  function Comprar(){
+    setPagar(1)
+  }
+
+  function finalizarcompra(){
+    return (
+      <Alert variant="success">
+        Sua compra foi processada
+      </Alert>
+    )
   }
 
   function Total(){
@@ -28,6 +52,8 @@ function Cart(){
   }
         return(
         <StyledTable>
+          {limpar && alert()}
+          {pagar && finalizarcompra()}
           <h1>Carrinho</h1>
           <Table striped bordered hover size="lg" className="cart-table">
             <thead>
@@ -63,7 +89,7 @@ function Cart(){
                 <Button type="submit" variant="secondary" size="lg" onClick={Apagar}>
                   Limpar Carrinho
                 </Button>
-                <Button variant="primary" size="lg">
+                <Button variant="primary" size="lg" onClick={Comprar}>
                   Finalizar Compra
                 </Button>
               </div>

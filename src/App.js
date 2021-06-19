@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Switch, Route} from 'react-router-dom';
 import Header from './Header';
 import Footer from './components/Footer/'
@@ -7,10 +7,15 @@ import SignUp from './components/sign_up/'
 import Cart from './components/Cart/';
 import Product from './components/products';
 import Search from './components/search/';
+import {LoginContext} from './components/Context/LoginContext'
 
 function App() {
+  const [user, setUser] = useState("");
+  const [codcli, setCodCli] = useState('');
+
   return (
-      <div>
+    <LoginContext.Provider value={{user, setUser, codcli, setCodCli}}>
+    <div>
         <Header />
           <Switch>
             <Route exact path = "/"  component={Home}/>
@@ -30,6 +35,8 @@ function App() {
           <Footer/>
       </div>
     
+    </LoginContext.Provider>
+      
   );
 }
 

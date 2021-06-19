@@ -1,35 +1,16 @@
-import React, {useState, useEffect} from  'react'
+import React, {useState, useEffect, useContext} from  'react'
 import { Form, Button} from 'react-bootstrap'
+import {LoginContext} from '../Context/LoginContext'
 
 function FormAccount(){
+  const {user,setUser} = useContext(LoginContext);
+  const {codcli, setCodCli} = useContext(LoginContext);
+  const [ data, setData] = useState('')
   const [enter, setEnter] = useState(0)
-  const [data, setData] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  // useEffect(() => {
-  //   fetch("http://localhost/pwn/login.php?", {
-  //     method: 'POST', 
-  //     headers: {'Content-Type': 'application/json'},
-  //     body: JSON.stringify({email: email, senha: password})
-  //   })
-  //   .then(response => response.json()).then(response => {setData(response)});
-  //   checkSuccess()
-  // },[data])
-
-  // function checkAccount(){
-  //   setData('check')
-  // }
-
-  // function checkAccount(){
-  //   fetch("http://localhost/pwn/login.php?", {
-  //     method: 'POST', 
-  //     headers: {'Content-Type': 'application/json'},
-  //     body: JSON.stringify({email: email, senha: password})
-  //   })
-  //   .then(response => response.json()).then(response => {setData(response)});
-  //   console.log(data)
-  // }
+  
   useEffect(() => {
     fetch("http://localhost/pwn/login.php?", {
       method: 'POST', 
@@ -37,7 +18,8 @@ function FormAccount(){
       body: JSON.stringify({email: email, senha: password})
     })
     .then(response => response.json()).then(response => {setData(response[0])});
-  },[enter])
+    console.log(data)
+  },[password,enter])
   
 
   function ForgotPass(){
@@ -62,46 +44,48 @@ function FormAccount(){
 
   function buscar(){
     setEnter(1)
+    setUser(data.nome)
+    setCodCli(data.codigo)
   }
 
   function Logout(){
-    setData()
+    setUser('')
+    setCodCli('')
   }
 
-    try {
-      return(
-        <>
-        <p className="welcome">Bem vindo {data.nome} </p>
-        <Button variant="primary" className="logout" onClick={Logout} >
-          Logout
-        </Button>
-        </>
-      )
-      
-   }
-   catch (e) {
-      return(
-          <Form>
-            <Form.Group controlId="formBasicEmail" >
-              <Form.Label>Email</Form.Label>
-              <Form.Control required type="email" placeholder="Digite o seu e-mail" value={email} onChange={getEmail} />
-            </Form.Group>
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Senha</Form.Label>
-              <Form.Control required type="password" placeholder="Digite a sua senha" value={password} onChange={getPassword}/>
-            </Form.Group>
-            <Form.Group controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Lembrar-me" />
-            </Form.Group>
-            <Button variant="success"  onClick={buscar}>
-              Fazer login
-            </Button>
-            <Button variant="primary" className="forgotpassword" onClick={ForgotPass} >
-              Esqueci minha senha
-            </Button>
-        </Form>
-      )
-   }
+  if (user == ''){
+    return(
+        <Form>
+          <Form.Group controlId="formBasicEmail" >
+            <Form.Label>Email</Form.Label>
+            <Form.Control required type="email" placeholder="Digite o seu e-mail" value={email} onChange={getEmail} />
+          </Form.Group>
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Senha</Form.Label>
+            <Form.Control required type="password" placeholder="Digite a sua senha" value={password} onChange={getPassword}/>
+          </Form.Group>
+          <Form.Group controlId="formBasicCheckbox">
+            <Form.Check required type="checkbox" label="Lembrar-me" />
+          </Form.Group>
+          <Button variant="success"  onClick={buscar}>
+            Fazer login
+          </Button>
+          <Button variant="primary" className="forgotpassword" onClick={ForgotPass} >
+            Esqueci minha senha
+          </Button>
+      </Form>
+    )
+  }
+  else{
+    return(
+      <>
+      <p className="welcome">Bem vindo {user} {codcli} </p>
+      <Button variant="primary" className="logout" onClick={Logout} >
+        Logout
+      </Button>
+      </>
+    )
+  }
     
   }
 export default FormAccount;
