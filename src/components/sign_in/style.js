@@ -25,4 +25,12 @@ export const StyledAccount = styled.div`
   .forgotpassword{
     margin-left: 10px;
   }
+
+  .welcome{
+    display: flex;
+    justify-content: center;
+  }
+  .logout{
+    margin-left: 50%;
+  }
 `
