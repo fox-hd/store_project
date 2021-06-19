@@ -81,7 +81,7 @@ function FormSignUp(){
     <StyledForm>
       <h2>Preencha seus dados para realizar o cadastro</h2>
       <div>{message? <p className="error">{message}</p> : ''}</div>
-      <div>{data?  <p className="success">{success}</p>: <p className="error">Erro ao realzar o cadastro, tente mais tarde</p>}</div>
+      <div>{data?  <p className="success">{success}</p>: ''}</div>
       <Form className="layout-form" onSubmit={SubmitForm}> 
         <Form.Group controlId="formBasicName">
           <Form.Label>Nome</Form.Label>

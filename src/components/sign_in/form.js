@@ -4,7 +4,7 @@ import {LoginContext} from '../Context/LoginContext'
 
 function FormAccount(){
   const {user,setUser} = useContext(LoginContext);
-  const {codcli, setCodCli} = useContext(LoginContext);
+  const { setCodCli} = useContext(LoginContext);
   const [ data, setData] = useState('')
   const [enter, setEnter] = useState(0)
   const [email, setEmail] = useState('')
@@ -44,8 +44,13 @@ function FormAccount(){
 
   function buscar(){
     setEnter(1)
-    setUser(data.nome)
-    setCodCli(data.codigo)
+    if (data == undefined){
+        alert("usuario ou senha invalidos")
+    }else{
+      setUser(data.nome)
+      setCodCli(data.codigo)
+    }
+    
   }
 
   function Logout(){
@@ -55,7 +60,7 @@ function FormAccount(){
 
   if (user == ''){
     return(
-        <Form>
+        <Form >
           <Form.Group controlId="formBasicEmail" >
             <Form.Label>Email</Form.Label>
             <Form.Control required type="email" placeholder="Digite o seu e-mail" value={email} onChange={getEmail} />
@@ -79,7 +84,7 @@ function FormAccount(){
   else{
     return(
       <>
-      <p className="welcome">Bem vindo {user},<br/> codigo do cliente: {codcli} </p>
+      <p className="welcome">Bem vindo {user} </p>
       <Button variant="primary" className="logout" onClick={Logout} >
         Logout
       </Button>
