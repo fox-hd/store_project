@@ -7,7 +7,8 @@ function Search(props){
   const [ data, setData] = useState([])
 
   useEffect(() => {
-    fetch(`http://localhost/pwn/produtos.php?nome=${props.location.data}`).then(res => res.json()).then(res => {setData(res)});
+    fetch(`http://localhost/pwn/produtos.php?nome=${props.location.data.search}`).then(res => res.json()).then(res => {setData(res)});
+    props.location.data.setSearch('')
   },[props.location.data])
   
   return(
