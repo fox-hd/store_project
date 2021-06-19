@@ -12,7 +12,7 @@ function Search(props){
   
   return(
     <StyledContent>
-      <h1>Resultado da sua busca por Celular:</h1>
+      <h1>Resultado da sua busca por {data.nome}:</h1>
       <StyledCards>
         <Container>
           <Row>
@@ -22,7 +22,7 @@ function Search(props){
                   <Card>
                     <Card.Img variant="top" width={200} height= {270} src={`/images/${product.codigo}.jpg`}/>
                       <Card.Body>
-                        <Card.Title>{product.preco}</Card.Title>
+                        <Card.Title>R$ {product.preco}</Card.Title>
                         <Card.Text>
                           {product.nome}
                         </Card.Text>
