@@ -7,7 +7,7 @@ function Home(){
   const [data, setdata] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost/pwn/produtos.php').then(res => res.json()).then(res => {setdata(res)});
+    fetch("http://localhost/pwn/produtos.php?nome=").then(res => res.json()).then(res => {setdata(res)});
   },[])
   
   

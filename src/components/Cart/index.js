@@ -1,59 +1,74 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Table, Figure, Button} from 'react-bootstrap'
-
 import {StyledTable} from './style'
 
 function Cart(){
-  function ClosedBuy(){
-    alert("Compra finalizada!")
+  const [data, setdata] = useState([])
+
+  var total = []
+
+  useEffect(() => {
+    fetch('http://localhost/pwn/carrinho.php').then(res => res.json()).then(res => {setdata(res)});
+  },[])
+
+  function Apagar(){
+    fetch("http://localhost/pwn/deletaCarrinho.php?");
+    window.location.reload();
+    alert("O Carrinho foi esvaziado!");
   }
-  return(
-    <StyledTable>
-      <h1>Carrinho</h1>
-      <Table striped bordered hover size="lg" className="cart-table">
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Qtd.</th>
-            <th>Valor</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><Figure.Image
-                width={50}
-                height={50}
-                src={""}/><span>Notebook Samsung Expert GfX X40 Intel Core i5, 8GB RAM</span>
-            </td>
-            <td>1</td>
-            <td>R$ 3.799,00</td>
-          </tr>
-          <tr>
-            <td><Figure.Image
-                width={50}
-                height={50}
-                src={""}/><span>Headphone Basike Fone de Ouvido Bluetooth </span>
-            </td>
-            <td>1</td>
-            <td>R$ 179,90</td>
-          </tr>
-          <tr>
-            <td colSpan="2"><h3>Total</h3>
-            </td>
-            <td><b>R$ 3.978,90</b></td>
-          </tr>
-        </tbody>
-      </Table>
-        <div className="cart-button">
-          <Button variant="secondary" size="lg">
-            Limpar Carrinho
-          </Button>
-          <Button variant="primary" size="lg" onClick={ClosedBuy}>
-            Finalizar Compra
-          </Button>
-        </div>
-    </StyledTable>
-  )
+
+  function Total(){
+    {data.map((valores)=>{
+      total.push(parseFloat(valores.preco))
+    }
+    )}
+    return(
+      total.reduce((a,b)=>a+b,0).toFixed(2)
+    )
+  }
+        return(
+        <StyledTable>
+          <h1>Carrinho</h1>
+          <Table striped bordered hover size="lg" className="cart-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Qtd.</th>
+                <th>Valor</th>
+              </tr>
+            </thead>
+              {data.map((carrinho)=>{
+                return(
+                  <tbody key={carrinho.produto}>
+                    <tr>
+                      <td><Figure.Image
+                        width={50}
+                        height={50}
+                        src={`/images/${carrinho.cod_produto}.jpg`}/><span>{carrinho.produto}</span>
+                      </td>
+                      <td>1</td>
+                      <td>R$ {carrinho.preco}</td>
+                    </tr>
+                    </tbody>
+                  )
+                } 
+              )
+              }
+            <tr>
+              <td colSpan="2"><h2>Total</h2></td>
+              <td><b>R$ {Total()}</b></td>
+            </tr>
+          </Table>
+              <div className="cart-button">
+                <Button type="submit" variant="secondary" size="lg" onClick={Apagar}>
+                  Limpar Carrinho
+                </Button>
+                <Button variant="primary" size="lg">
+                  Finalizar Compra
+                </Button>
+              </div>
+        </StyledTable>
+        )
 }
 
 export default Cart;

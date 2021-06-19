@@ -46,8 +46,7 @@ function FormSignUp(){
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({nome: name, email: email, senha: password})
     })
-    .then(res => res.json()).then(res => {setData(res)});
-add  }
+    .then(res => res.json()).then(res => {setData(res)}); }
 
   const ValidName = (e) =>{
     setName(e.target.value)

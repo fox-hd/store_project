@@ -31,9 +31,7 @@ export const StyledProduct = styled.div`
       .buy{
         margin-right: 20px;
       }
-      .info-footer{
-        font-size: 15px;
-      }
+      
     }
   }
 `
