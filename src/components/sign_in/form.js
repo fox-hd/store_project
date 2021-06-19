@@ -6,20 +6,6 @@ function FormAccount(){
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  // useEffect(() => {
-  //   fetch("http://localhost/pwn/login.php?", {
-  //     method: 'POST', 
-  //     headers: {'Content-Type': 'application/json'},
-  //     body: JSON.stringify({email: email, senha: password})
-  //   })
-  //   .then(response => response.json()).then(response => {setData(response)});
-  //   checkSuccess()
-  // },[data])
-
-  // function checkAccount(){
-  //   setData('check')
-  // }
-
   function checkAccount(){
     fetch("http://localhost/pwn/login.php?", {
       method: 'POST', 

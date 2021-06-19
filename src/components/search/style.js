@@ -24,7 +24,6 @@ export const StyledCards = styled.div`
 
 export const StyledContent = styled.div`
   background: url(${background});
-  height: 100vh;
   h1{
     font-size: 50px;
     margin: 30px 10% 0px;
