@@ -21,4 +21,8 @@ export const StyledAccount = styled.div`
       margin: 50px 110px;
     }
   }
+
+  .forgotpassword{
+    margin-left: 10px;
+  }
 `
