@@ -24,7 +24,7 @@ function Header(){
           </Nav>
           <Form inline>
             <Form.Control required type="text" placeholder="Busca" className="mr-sm-2" value={search} onChange={FieldSearch}/>
-            <Button variant="outline-light" className="mr-sm-2" placeholder="Busca" as={Link} to={{pathname:"/busca", data: search}}>Busca</Button>
+            <Button variant="outline-light" className="mr-sm-2" placeholder="Busca" as={Link} to={{pathname:"/busca", data: {search, setSearch}}}>Busca</Button>
           </Form>
           <Button variant="primary" onClick={() => setModalSignInShow(true)}>
           <BsPeopleCircle/> Login

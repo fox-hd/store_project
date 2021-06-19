@@ -6,20 +6,6 @@ function FormAccount(){
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  // useEffect(() => {
-  //   fetch("http://localhost/pwn/login.php?", {
-  //     method: 'POST', 
-  //     headers: {'Content-Type': 'application/json'},
-  //     body: JSON.stringify({email: email, senha: password})
-  //   })
-  //   .then(response => response.json()).then(response => {setData(response)});
-  //   checkSuccess()
-  // },[data])
-
-  // function checkAccount(){
-  //   setData('check')
-  // }
-
   function checkAccount(){
     fetch("http://localhost/pwn/login.php?", {
       method: 'POST', 
@@ -29,6 +15,16 @@ function FormAccount(){
     .then(response => response.json()).then(response => {setData(response)});
     console.log(data)
     checkSuccess()
+  }
+
+  function ForgotPass(){
+    fetch(`http://localhost/pwn/email.php?`, {
+      method: 'POST', 
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email})
+    })
+    .then(response => response.json()).then(response => {setData(response)});
+    console.log(data[0])
   }
 
   const getEmail = (e) =>{
@@ -43,7 +39,7 @@ function FormAccount(){
   }
 
   function checkSuccess(){
-
+    
   }
 
   return(
@@ -59,8 +55,11 @@ function FormAccount(){
       <Form.Group controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Lembrar-me" />
       </Form.Group>
-      <Button variant="success"  onClick={checkAccount}>
+      <Button variant="success"  onClick={checkAccount} >
         Fazer login
+      </Button>
+      <Button variant="primary" className="forgotpassword" onClick={ForgotPass} >
+        Esqueci minha senha
       </Button>
   </Form>
   )
