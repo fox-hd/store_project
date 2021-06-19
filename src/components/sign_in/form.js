@@ -79,7 +79,7 @@ function FormAccount(){
   else{
     return(
       <>
-      <p className="welcome">Bem vindo {user} {codcli} </p>
+      <p className="welcome">Bem vindo {user},<br/> codigo do cliente: {codcli} </p>
       <Button variant="primary" className="logout" onClick={Logout} >
         Logout
       </Button>

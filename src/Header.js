@@ -28,7 +28,7 @@ function Header(){
           </Nav>
           }
           <Navbar.Brand >{user}</Navbar.Brand>
-          <Form inline>
+          <Form inline style={{marginLeft: "auto" }} >
             <Form.Control required type="text" placeholder="Busca" className="mr-sm-2" value={search} onChange={FieldSearch}/>
             <Button variant="outline-light" className="mr-sm-2" placeholder="Busca" as={Link} to={{pathname:"/busca", data: {search, setSearch}}}>Busca</Button>
           </Form>
