@@ -12,7 +12,7 @@ function Cart(){
   var total = []
 
   useEffect(() => {
-    fetch('http://localhost/pwn/carrinho.php').then(res => res.json()).then(res => {setdata(res)});
+    fetch(`http://localhost/pwn/carrinho.php?cod_cli=${codcli}`).then(res => res.json()).then(res => {setdata(res)});
   },[limpar])
 
   function Apagar(){

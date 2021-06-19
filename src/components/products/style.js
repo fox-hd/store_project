@@ -29,7 +29,7 @@ export const StyledProduct = styled.div`
         margin-right: 10px;
       }
       .buy{
-        margin-right: 20px;
+        margin-left: 20px;
       }
       
     }
