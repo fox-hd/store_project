@@ -43,8 +43,9 @@ function Product(props){
           <p className="price">R$ {preco}</p>
           <p className="info-footer">ou até 10x de R$ {desconto1} sem juros</p>
           <p className="payment"><img src={Payment}/> R$ {desconto2} - 10% de desconto em 1x no Cartão ou Boleto</p>
-          <Button type="submit" variant="success" size="lg" className="buy" as={Link} to={{pathname:"/carrinho"}}>Comprar</Button>
-          <Button type="submit" variant="primary" size="lg" onClick={Adicionar}>Adicionar ao carrinho</Button>
+          <Button type="submit" variant="success" size="lg" className="buy" disabled={codcli === ""} as={Link} to={{pathname:"/carrinho"}}>Comprar</Button>
+          <Button type="submit" variant="primary" size="lg" className="button" disabled={codcli === ""} onClick={Adicionar}>Adicionar ao carrinho</Button>
+          {codcli?'': <p>Faça o login para adicionar produtos no seu carrinho</p>}
           </Col>
         </Row>
       </Container>

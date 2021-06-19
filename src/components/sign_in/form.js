@@ -55,7 +55,7 @@ function FormAccount(){
 
   if (user == ''){
     return(
-        <Form>
+        <Form >
           <Form.Group controlId="formBasicEmail" >
             <Form.Label>Email</Form.Label>
             <Form.Control required type="email" placeholder="Digite o seu e-mail" value={email} onChange={getEmail} />
