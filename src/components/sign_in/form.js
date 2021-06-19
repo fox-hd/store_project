@@ -31,6 +31,16 @@ function FormAccount(){
     checkSuccess()
   }
 
+  function ForgotPass(){
+    fetch(`http://localhost/pwn/email.php?`, {
+      method: 'POST', 
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email})
+    })
+    .then(response => response.json()).then(response => {setData(response)});
+    console.log(data[0])
+  }
+
   const getEmail = (e) =>{
     setEmail(e.target.value)
     console.log(email)
@@ -43,7 +53,7 @@ function FormAccount(){
   }
 
   function checkSuccess(){
-
+    
   }
 
   return(
@@ -59,8 +69,11 @@ function FormAccount(){
       <Form.Group controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Lembrar-me" />
       </Form.Group>
-      <Button variant="success"  onClick={checkAccount}>
+      <Button variant="success"  onClick={checkAccount} >
         Fazer login
+      </Button>
+      <Button variant="primary" className="forgotpassword" onClick={ForgotPass} >
+        Esqueci minha senha
       </Button>
   </Form>
   )
