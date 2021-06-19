@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Card, Col, Container, Row, Button } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import {StyledCards} from './style'
-
+  
 function Home(){
   const [data, setdata] = useState([])
 
